@@ -530,28 +530,28 @@ const [shelvData, setShelvData] = useState(null)
                                               </ul>
                                             </div>
                                             <div>
-                                                <span>Номенклатура</span> <span>{item.nomenclature}</span>
+                                                <span>Номенклатура :</span> <span>{item.nomenclature}</span>
                                             </div>
                                             <div>
-                                                <span>Уровань размещения</span> <span>{item.shelf_level}</span>
+                                                <span>Уровень размещения :</span> <span>{item.shelf_level}</span>
                                             </div>
                                             <div>
-                                                <span>Номер ячейки ну уровне</span> <span>{item.cell_number}</span>
+                                                <span>Номер ячейки на уровне :</span> <span>{item.cell_number}</span>
                                             </div>
                                             <div>
-                                                <span>Количество</span> <span>{item.quantity}</span>
+                                                <span>Количество :</span> <span>{item.quantity}</span>
                                             </div>
                                             <div>
                                                 <span>UUID</span> <span>{item.uuid}</span>
                                             </div>
                                             <div>
                                             <div>
-                                                <span>Ячейка на уровне</span> : <span>{item.cell_number}</span>
+                                                <span>Ячейка на уровне :</span> : <span>{item.cell_number}</span>
                                             </div>
                                             { taskTypes === 'inventory' && <div className='agara'>
-                                                <span>Факт кол-во</span> 
+                                                <span>Факт кол-во :</span> 
                                                 <input type="text" /> 
-                                                <button onClick={fakseSaveQuantity}>Сохоанить</button>
+                                                <button onClick={fakseSaveQuantity}>Сохранить</button>
                                             </div>  }
                                             <button className="managment-show__cell my-task-show-cell" onClick={() => showCellsModal(true, item)}>Показать ячейку</button>
                                             </div>
@@ -800,7 +800,7 @@ const [shelvData, setShelvData] = useState(null)
               </button>
             </div>
             <div className="">
-              <h3>В рбаоте</h3>
+              <h3>В работе</h3>
               { itemsPreview.length &&
                 itemsPreview.map( item => {
                   return (
@@ -976,8 +976,8 @@ const [shelvData, setShelvData] = useState(null)
             <div>
               <h3>Дата</h3>
               <select onChange={e => setDateQuery(e.target.value)}>
-                <option value="ASC">Старые</option>
-                <option value="DESC">Новые</option>
+                <option value="ASC"> От старых к новым</option>
+                <option value="DESC">От новых к старым</option>
               </select>
             </div>
           </div>
@@ -1034,7 +1034,7 @@ const [shelvData, setShelvData] = useState(null)
                               }}
                               className="btn-task__item"
                             >
-                              Закрыть задчу
+                              Закрыть задачу
                             </button>
                           ) : (
                             <div></div>

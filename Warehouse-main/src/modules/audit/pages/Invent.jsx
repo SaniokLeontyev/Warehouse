@@ -229,7 +229,7 @@ function Invent() {
                     return (
                       <tr key={index}>
                         <td>{item.id}</td>
-                        <td>{formatDateTime(item.createDate)}4</td>
+                        <td>{formatDateTime(item.createDate)}</td>
                         <td>{`DOC000${item.id}`}</td>
                         <td>{`${item.userDto.name} ${item.userDto.surname}`}</td>
                         <td>

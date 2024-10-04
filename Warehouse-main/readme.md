@@ -7,7 +7,7 @@
 # Зависимости
 1. React, React-Router, Redux, React-Redux, Redux-Toolkit --- экосистема react
 2. axios, js-cookie --- для запросов/для работы с cookie
-3. konva, recat-konva --- основная либа для конструктора и самого интерфейса склада
+3. konva, react-konva --- основная либо для конструктора и самого интерфейса склада
 
 
 # Список остальных зависимостей так же есть в файле package.json

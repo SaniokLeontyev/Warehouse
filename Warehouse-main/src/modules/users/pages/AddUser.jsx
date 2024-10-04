@@ -63,7 +63,7 @@ function AddUser () {
             <form id='user-form' encType='multipart/form-data' onSubmit={ (e) => {e.preventDefault(); createNewUser()}}>
                 <div>
                     <p>Логин</p>
-                    <input type="text" id="login" placeholder='login' required/>
+                    <input type="text" id="login" placeholder='Логин' required/>
                 </div>
                 <div>
                     <p>Пароль</p>

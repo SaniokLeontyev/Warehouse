@@ -13,7 +13,7 @@ const StartClock = () => {
     }, []);
 
     const formatTime = (date) => {
-        const daysOfWeek = ['Воскресенбе', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+        const daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
         const day = daysOfWeek[date.getDay()];
         const dayOfMonth = date.getDate();
         const month = date.getMonth() + 1;

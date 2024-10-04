@@ -237,11 +237,12 @@ const matchInShelf = (resultUUID) => {
       const elapsedDuration = now - startDate;
       const elapsedPercent = elapsedDuration / totalDuration;
 
-      if (elapsedPercent < 0) return <h4 style={{ color: 'purple', marginTop: '10px' }}>Просрочено</h4>
-      if (elapsedPercent >= 0.75 && elapsedPercent < 1) return <h4 style={{ color: 'red', marginTop: '10px' }}>Прошло больше 75% срока годности</h4>;
-      if (elapsedPercent >= 0.4 && elapsedPercent <= 0.75) return <h4 style={{ color: 'orange', marginTop: '10px'}}>Прошло больше 45% срока годности</h4>;
+      if (elapsedPercent > 1) return <h4 style={{ color: 'red', marginTop: '10px' }}>Просрочено</h4>
+      if (elapsedPercent > 0.55 && elapsedPercent <= 1) return <h4 style={{ color: 'purple', marginTop: '10px' }}>Прошло больше 45% срока годности</h4>
+      if (elapsedPercent > 0.25 && elapsedPercent <= 0.55) return <h4 style={{ color: 'orange', marginTop: '10px'}}>Прошло больше 75% срока годности</h4>;
+      if (elapsedPercent > 0 && elapsedPercent <= 0.25) return <h4 style={{ color: 'green', marginTop: '10px' }}>Срок годности в норме</h4>;
 
-    return <h4 style={{ color: 'green', marginTop: '10px'}}>Срок годности в норме</h4>;
+    //return <h4 style={{ color: 'green', marginTop: '10px'}}>Срок годности в норме</h4>;
   }
 
   const formatedDate = (value) => {
@@ -422,29 +423,29 @@ const matchInShelf = (resultUUID) => {
           { foundItemInShelf !== null && 
             <div>
               <div className="managment-modal__right-item">
-                <span>Номенклатура</span> : <span>{foundItemInShelf.nomenclature}</span> <br />
-                <span>Количество</span> : <span>{foundItemInShelf.quantity}</span> <br />
+                <span>Номенклатура :</span> : <span>{foundItemInShelf.nomenclature}</span> <br />
+                <span>Количество :</span> : <span>{foundItemInShelf.quantity}</span> <br />
                 {/* <span>Units</span> : <span>{item.units}</span> <br /> */}
-                <span>Уровень хранения</span> : <span>{foundItemInShelf.shelf_level}</span> <br />
-                <span>Ячейка на уровне</span> : <span>{foundItemInShelf.cell_number}</span> <br /> <button className="managment-show__cell" onClick={() => showCellsModal(true, foundItemInShelf)}>Показать ячейку</button> <br />
-                <span>Дата производста</span> : <span>{formatedDate(foundItemInShelf.start_date)}</span>
-                <span>Дата истечения срока</span> : <span>{formatedDate(foundItemInShelf.end_date)}</span>
+                <span>Уровень хранения :</span> : <span>{foundItemInShelf.shelf_level}</span> <br />
+                <span>Ячейка на уровне :</span> : <span>{foundItemInShelf.cell_number}</span> <br /> <button className="managment-show__cell" onClick={() => showCellsModal(true, foundItemInShelf)}>Показать ячейку</button> <br />
+                <span>Дата производста :</span> : <span>{formatedDate(foundItemInShelf.start_date)}</span>
+                <span>Дата истечения срока :</span> : <span>{formatedDate(foundItemInShelf.end_date)}</span>
                 { showConditionDateText(foundItemInShelf) }
               </div>
             </div>
             
           }
-          <h4 style={{ margin: '20px 0px 0px 0px' }}>Вся номенклатура на стеллаже {shelvData?.rack_id}</h4>
+          <h4 style={{ margin: '20px 0px 0px 0px' }}>Вся номенклатура на стеллаже :{shelvData?.rack_id}</h4>
           { !shelvData?.item_attributes.length ? 'Нет номенклатуры' : shelvData.item_attributes.map( (item, index) => {
             return (
               <div className="managment-modal__right-item" key={index}>
-                <span>Номенклатура</span> : <span>{item.nomenclature}</span> <br />
-                <span>Количество</span> : <span>{item.quantity}</span> <br />
+                <span>Номенклатура :</span> : <span>{item.nomenclature}</span> <br />
+                <span>Количество :</span> : <span>{item.quantity}</span> <br />
                 {/* <span>Units</span> : <span>{item.units}</span> <br /> */}
-                <span>Уровень хранения</span> : <span>{item.shelf_level}</span> <br />
-                <span>Ячейка на уровне</span> : <span>{item.cell_number}</span> <br /> <button className="managment-show__cell" onClick={() => showCellsModal(true, item)}>Показать ячейку</button> <br />
-                <span>Дата производста</span> : <span>{formatedDate(item.start_date)}</span> <br />
-                <span>Дата истечения</span> : <span>{formatedDate(item.end_date)}</span>
+                <span>Уровень хранения :</span> : <span>{item.shelf_level}</span> <br />
+                <span>Ячейка на уровне :</span> : <span>{item.cell_number}</span> <br /> <button className="managment-show__cell" onClick={() => showCellsModal(true, item)}>Показать ячейку</button> <br />
+                <span>Дата производста :</span> : <span>{formatedDate(item.start_date)}</span> <br />
+                <span>Дата истечения :</span> : <span>{formatedDate(item.end_date)}</span>
                 {showConditionDateText(item)}
               </div>
             )
