@@ -1,0 +1,191 @@
+create table user_role
+(
+    id   serial
+        primary key,
+    role varchar(100)
+);
+
+alter table user_role
+    owner to dev;
+
+create table users
+(
+    id         serial
+        primary key,
+    name       varchar(200),
+    surname    varchar(200),
+    patronymic varchar(200),
+    job_title  varchar(200)
+);
+
+alter table users
+    owner to dev;
+
+create table accounts
+(
+    id       serial
+        primary key,
+    username varchar(100),
+    password varchar(100),
+    document varchar(100),
+    user_id  integer
+        constraint fk_accounts_users
+            references users,
+    role_id  integer
+        constraint fk_accounts_user_role
+            references user_role
+);
+
+alter table accounts
+    owner to dev;
+
+create table constructor
+(
+    id     serial
+        primary key,
+    width  integer,
+    height integer,
+    name   varchar(100)
+);
+
+alter table constructor
+    owner to dev;
+
+create table doorways
+(
+    id                 serial
+        primary key,
+    coordinate_x       varchar,
+    coordinate_y       varchar,
+    draggable          boolean,
+    fill_pattern_image varchar,
+    height             integer,
+    width              integer,
+    name               varchar(200),
+    opacity            integer,
+    constructor_id     integer
+        constraint fk_doorways_constructor
+            references constructor
+);
+
+alter table doorways
+    owner to dev;
+
+create table shelves
+(
+    id              serial
+        primary key,
+    shelf_level     integer,
+    cells_per_width integer,
+    cells_per_depth integer,
+    coordinate_x    varchar(200),
+    coordinate_y    varchar(200),
+    fill            varchar(200),
+    opacity         integer,
+    draggable       boolean,
+    name            varchar(200),
+    width           integer,
+    height          integer,
+    rack_height     integer,
+    rack_id         varchar(100),
+    constructor_id  integer
+        constraint fk_shelves_constructor
+            references constructor
+);
+
+alter table shelves
+    owner to dev;
+
+create table item_attributes
+(
+    id             serial
+        primary key,
+    nomenclature   varchar(200),
+    units          varchar(200),
+    quantity       integer,
+    condition_type varchar(200),
+    shelf_id       integer
+        constraint fk_item_attr_shelves
+            references shelves
+);
+
+alter table item_attributes
+    owner to dev;
+
+create table zones
+(
+    id             serial
+        primary key,
+    name           varchar(200),
+    description    text,
+    coordinate_x   varchar(200),
+    coordinate_y   varchar(200),
+    draggable      boolean,
+    fill           varchar(200),
+    height         integer,
+    width          integer,
+    opacity        integer,
+    title          varchar(300),
+    constructor_id integer
+        constraint fk_zones_constructor
+            references constructor
+);
+
+alter table zones
+    owner to dev;
+
+create table zone_shelves
+(
+    id       serial
+        primary key,
+    zone_id  integer
+        constraint fk_zones_shelves_zonez
+            references zones,
+    shelf_id integer
+        constraint fk_zones_shelves_shelves
+            references shelves
+);
+
+alter table zone_shelves
+    owner to dev;
+
+create table windows
+(
+    id                 serial
+        primary key,
+    coordinate_x       varchar(200),
+    coordinate_y       varchar(200),
+    draggable          boolean,
+    fill_pattern_image varchar(200),
+    height             integer,
+    width              integer,
+    name               varchar(200),
+    opacity            integer,
+    constructor_id     integer
+        constraint fk_windows_constructor
+            references constructor
+);
+
+alter table windows
+    owner to dev;
+
+create table walls
+(
+    id             serial
+        primary key,
+    coordinate_x   varchar(200),
+    coordinate_y   varchar(200),
+    fill           varchar(200),
+    draggable      boolean,
+    height         integer,
+    width          integer,
+    name           varchar(200),
+    opacity        integer,
+    constructor_id integer
+        constraint fk_walls_constructor
+            references constructor
+);
+
+alter table walls
+    owner to dev;
+

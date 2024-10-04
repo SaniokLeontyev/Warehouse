@@ -1,0 +1,2 @@
+export const GET_TASK_BY_LOGIN = 'GET_TASK_BY_LOGIN'
+export const GET_TASK_STATUS = 'GET_TASK_STATUS'

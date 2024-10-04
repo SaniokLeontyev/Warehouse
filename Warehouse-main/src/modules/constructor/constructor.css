@@ -1,0 +1,263 @@
+.constructor-list {
+    max-width: 1200px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0px 0px 5px 0px gray;
+    border-radius: 30px;
+}
+.constructor-list__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.constructor-list__top button {
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    background: rgb(0, 119, 128);
+    box-shadow: 0px 0px 3px 0px rgb(0, 119, 128);
+    border-radius: 20px;
+    color: #fff;
+}
+.constructor-list__top > h2 {
+    font-size: 45px;
+}
+.constructor-list__table {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.constructor-list__table-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+.constructor-list__table-item:nth-child(odd) {
+    background: rgba(128, 128, 128, 0.199);
+}
+.constructor-list__table-item:nth-child(even) {
+    background: rgba(128, 128, 128, 0.085);
+}
+.constructor-list__table-item h3 {
+    font-size: 24px;
+}
+.constructor-list__actions {
+    display: flex;
+    gap: 20px;
+}
+.constructor-list__actions button {
+    font-size: 16px;
+    padding: 5px 10px;
+    border: none;
+    font-weight: 600;
+}
+.constructor-list__actions-edit {
+    background: lightgreen;
+}
+.constructor-list__actions-delete {
+    background: lightcoral;
+}
+
+
+
+.konvajs-content {
+    width: 100% !important;
+    height: 100% !important;
+}
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+.app {
+    width: 100vw; /* 100vw */ 
+    height: 100vh;
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+
+
+/* Внешка плана начало */
+.plane {
+    width: 50%; /* 50% */
+    height: 100%;
+    overflow: scroll;
+    border: 3px dashed black;
+    position: relative;
+}
+.plane-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../../assets/img/square.svg') !important;
+    background-size: 45px;
+    background-repeat: repeat;
+    width: 10000px;
+    height: 10000px;
+    transition: 1s;
+}
+
+.plane-nav {
+    position: sticky;
+    width: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.plane-nav button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    box-shadow: 0px 0px 10px 0px gray;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    background: #000;
+    color: #fff;
+}
+.plane-nav button:disabled {
+    background: gray;
+}
+.zoomValue {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: black;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+}
+.plane::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.plane::-webkit-scrollbar-track {
+    background: lightgray;
+}
+.plane::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 139, 0.454);
+}
+.plane::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+/* Внешка плана конец */
+
+
+
+
+
+/* Функционал */
+.plane-right {
+    width: 50%;
+    height: initial;
+}
+.plane-functions {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.plane-functions button {
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    background: transparent;
+    box-shadow: 0px 0px 10px -3px gray;
+    font-size: 18px;
+    color: #000000be;
+}
+/* Функционал */
+
+
+.square {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    border: 2px dashed red;
+}
+
+/* Поля функционала */
+.plane-right input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    box-shadow: 0px 0px 10px -3px gray;
+    border-radius: 20px;
+    padding-left: 30px;
+}
+.plane-right textarea {
+    resize: none;
+    width: 100%;
+    height: 200px;
+    border: none;
+    box-shadow: 0px 0px 10px -3px gray;
+    border-radius: 20px;
+    padding: 30px;
+}
+.plane-right p {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.plane-right__btn {
+    width: 200px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px -3px gray;
+}
+.input-area {
+    padding: 30px;
+    box-shadow: 0px 0px 10px -3px gray;
+    width: 100%;
+    border-radius: 20px;
+}
+.zone-input {
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+}
+.grid-input {
+    display: none;
+    flex-direction: column;
+}
+.grid-input button {
+    margin-top: 20px;
+}
+.rack-input {
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+}
+.rack-input select {
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: transparent;
+    box-shadow: 0px 0px 10px -3px gray;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.active {
+    display: flex;
+}
+/* Поля функционала */

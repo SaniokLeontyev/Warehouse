@@ -1,0 +1,2 @@
+export const LOADER = 'LOADER'
+export const GET_SINGLE_WAREHOUSE = 'GET_SINGLE_WAREHOUSE'

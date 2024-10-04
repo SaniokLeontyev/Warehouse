@@ -1,0 +1,253 @@
+.my-task {
+    width: 90%;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px -4px gray;
+    margin: 50px auto;
+}
+.my-task__title {
+    font-size: 45px;
+    font-family: sans-serif;
+}
+.my-task__item-sec button {
+    border: none;
+    border-radius:17px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 10px;
+    min-width: 110px;
+}
+.my-task__orange {
+    background: orange;
+}
+.my-task__green {
+    background: rgb(0, 170, 0);
+}
+.my-task__blue {
+    background: rgb(0, 133, 126);
+}
+.my-task__modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 90vw;
+    height: 90vh;
+    background: #fff;
+    padding: 30px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px 0px gray;
+    border-radius:25px;
+}
+.my-task__modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.my-task__modal-top {
+    font-size: 45px;
+}
+.my-task__modal-top button {
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+    border-radius: 50%;
+    border: none;
+    background: rgb(202, 202, 202);
+}
+.my-task__modal-wrapper {
+    display: flex;
+    gap: 30px;
+}
+.my-task__modal-wrapper h4 {
+    font-size: 24px;
+}
+.my-task__modal-list {
+    height: 60vh;
+    overflow-y: scroll;
+}
+.my-task__modal-right {
+    width: 45%;
+}
+.my-task__modal-list__item {
+    margin: 15px;
+    padding:30px;
+    width: 80%;
+    box-shadow: 0px 0px 5px 0px gray;
+}
+.my-task__item-main__pointer {
+    cursor: pointer;
+    border-bottom: 3px solid black;
+    width: fit-content;
+}
+
+.s-1 {
+    background-color: rgb(96, 128, 0);
+    color: #fff;
+}
+.s-2 {
+    background-color: rgb(0, 122, 128);
+    color: #fff;
+}
+.s-3 {
+    background-color: rgb(0, 26, 128);
+    color: #fff;
+}
+.s-4 {
+    background-color: rgb(149, 0, 255);
+    color: #fff;
+}
+.s-5 {
+    background-color: rgb(255, 0, 179);
+    color: #fff;
+}
+.s-6 {
+    background-color: pink;
+    color: #fff;
+}
+.s-7 {
+    background-color: rgb(208, 208, 2);
+    color: #fff;
+}
+.s-8 {
+    background-color: brown;
+    color: #fff;
+}
+
+.b-1 {
+    background-color: green;
+    color: #fff;
+}
+.b-2 {
+    background-color: rgb(196, 127, 0);
+    color: #fff;
+}
+.b-3 {
+    background-color: rgb(51, 51, 151);
+    color: #fff;
+}
+.b-5 {
+    background-color: gray;
+    color: #fff;
+}
+.nevlez {
+    background-color:red;
+}
+.my-task__item h4 {
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border-radius: 15px;
+}
+.my-task__filter {
+    display: flex;
+    gap: 20px;
+}
+.my-task__filter div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.my-task__filter select {
+    border: none;
+    width: 200px;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 0px gray;
+}
+.my-task__modal-list__item input {
+    margin-left: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px gray;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 20px;
+}
+.my-task-show-cell {
+    margin-top: 20px;
+    margin-left: 0;
+}
+.agara button {
+    background-color: rgb(0, 122, 128);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    width: 120px;
+    height: 30px;
+    margin-left: 20px;
+    border-radius: 15px;
+}
+@media (max-width: 850px) {
+    .my-task__item * {
+        font-size: 11px !important;
+    }
+}
+
+
+.my-task__table-container {
+    overflow-x: scroll;
+}
+.my-task__table {
+    text-align: center;
+    margin-top: 25px;
+}
+.my-task__table thead > tr {
+    background: rgb(224, 224, 224) !important;
+}
+.my-task__table tr, td {
+    height: 45px !important;
+    font-size: 14px;
+    font-weight: bold;
+}
+.my-task__table tr:nth-child(even) {
+    height: 35px;
+    background: rgb(224, 224, 224);
+}
+.my-task__table tr:nth-child(odd) {
+    height: 35px;
+    background: rgb(247, 247, 247);
+}
+.my-task__table-id {
+    min-width: 50px;
+}
+.my-task__table-create {
+    min-width: 160px;
+}
+.my-task__table-user {
+    min-width: 250px;
+}
+.my-task__table-manager {
+    min-width: 250px;
+}
+.my-task__table-type {
+    min-width: 140px;
+}
+.my-task__table-status {
+    min-width: 220px;
+}
+.my-task__table-comment {
+    min-width: 140px;
+}
+.my-task__table-action {
+    min-width: 150px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.my-task__table-btn {
+    min-width: 100px;
+    border: none;
+    border-radius: 17px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 10px;
+}

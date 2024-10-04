@@ -1,0 +1,101 @@
+{
+    "id": 0,
+    "name": "Test",
+    "width": 100, // Placeholder for user-defined width
+    "height": 100, // Placeholder for user-defined height
+    "walls": [
+        {
+            "id": 0,
+            "x": "22",
+            "y": "33",
+            "fill": "test",
+            "opacity": 1,
+            "draggable": true,
+            "name": "test wall",
+            "width": 12,
+            "height": 12
+        },
+        {
+            "id": 0,
+            "x": "44",
+            "y": "55",
+            "fill": "test",
+            "opacity": 1,
+            "draggable": true,
+            "name": "test wall 2",
+            "width": 12,
+            "height": 12
+        }
+    ],
+    "doorways": [
+        {
+            "id": 0,
+            "x": "33",
+            "y": "33",
+            "draggable": true,
+            "fill_pattern_image": "tt",
+            "height": 45,
+            "width": 145,
+            "name": "imgs",
+            "opacity": 1
+        }
+    ],
+    "windows": [
+        {
+            "id": 0,
+            "x": "22",
+            "y": "22",
+            "draggable": true,
+            "fill_pattern_image": "tt",
+            "height": 45,
+            "width": 145,
+            "name": "imgs",
+            "opacity": 1
+        }
+    ],
+    "shelves": [
+        {
+            "id": 0,
+            "shelf_level": 1,
+            "cells_per_width": 22, // Placeholder for number of cells per shelf width
+            "cells_per_depth": 11, // Placeholder for number of cells per shelf depth
+            "x": "45",
+            "y": "43",
+            "fill": "gray",
+            "opacity": 1,
+            "draggable": true,
+            "name": "rack",
+            "width": 50,
+            "height": 50,
+            "rack_height": 200,
+            "rack_id": "A52",
+            "zone_names":[
+                "test123"
+            ],
+            "item_attributes": [
+                {
+                    "id": 0,
+                    "nomenclature": "Test", // Placeholder for item nomenclature
+                    "units": "tt", // Placeholder for item units
+                    "quantity": 0, // Placeholder for item quantity
+                    "condition_type": "test" // Placeholder for item condition type
+                }
+            ]
+        }
+    ],
+    "zones": [
+        {
+            "id": 0,
+            "name": "test123", // Placeholder for zone name
+            "description": "test123123", // Placeholder for zone description
+            "draggable": true,
+            "fill": "#000000",
+            "height": 45,
+            "opacity": 0.5,
+            "title": "sadsad",
+            "width": 45,
+            "x": "77",
+            "y": "21"
+        }
+    ]
+}
